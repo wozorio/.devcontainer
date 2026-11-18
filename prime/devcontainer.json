@@ -1,7 +1,7 @@
 {
-  "name": "DevRig",
+  "name": "Prime",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu26.04",
-  "runArgs": ["--hostname", "devrig"],
+  "runArgs": ["--hostname", "prime"],
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
@@ -12,19 +12,19 @@
     "ghcr.io/devcontainers-extra/features/mise:1": {}
   },
   "containerEnv": {
-    "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/DevRig/mise.toml",
+    "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/prime/mise.toml",
     "MISE_DATA_DIR": "/mnt/mise-data"
   },
   "remoteEnv": {
     "PATH": "/mnt/mise-data/shims:/home/vscode/.dotnet/tools:${containerEnv:PATH}"
   },
   "mounts": [
-    "source=mise-data-volume,target=/mnt/mise-data,type=volume",
-    "source=dotnet-tools,target=/home/vscode/.dotnet/tools,type=volume",
+    "source=mise-data-${devcontainerId},target=/mnt/mise-data,type=volume",
+    "source=dotnet-tools-${devcontainerId},target=/home/vscode/.dotnet/tools,type=volume",
     "source=nuget-cache,target=/home/vscode/.nuget,type=volume",
     "source=zsh-history,target=/commandhistory,type=volume"
   ],
-  "postCreateCommand": [".devcontainer/DevRig/post-create.sh"],
+  "postCreateCommand": [".devcontainer/prime/post-create.sh"],
   "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {
@@ -149,7 +149,8 @@
 
         // Shellscript
         "[shellscript]": {
-          "editor.defaultFormatter": "mkhl.shfmt"
+          "editor.defaultFormatter": "mkhl.shfmt",
+          "editor.tabSize": 4
         },
         "shfmt.executableArgs": ["-i", "4"],
 
