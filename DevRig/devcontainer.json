@@ -1,0 +1,59 @@
+{
+  "name": "DevRig",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu26.04",
+  "runArgs": ["--hostname", "devrig"],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "ohMyZshTheme": "robbyrussell"
+    },
+    "ghcr.io/devcontainers-extra/features/mise:1": {}
+  },
+  "containerEnv": {
+    "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/DevRig/mise.toml",
+    "MISE_DATA_DIR": "/mnt/mise-data"
+  },
+  "remoteEnv": {
+    "PATH": "/mnt/mise-data/shims:/home/vscode/.dotnet/tools:${containerEnv:PATH}"
+  },
+  "mounts": [
+    "source=mise-data-volume,target=/mnt/mise-data,type=volume",
+    "source=dotnet-tools,target=/home/vscode/.dotnet/tools,type=volume",
+    "source=nuget-cache,target=/home/vscode/.nuget,type=volume",
+    "source=zsh-history,target=/commandhistory,type=volume"
+  ],
+  "postCreateCommand": [".devcontainer/DevRig/post-create.sh"],
+  "waitFor": "postCreateCommand",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "vscode-kubernetes.kubectl-path": "/mnt/mise-data/shims/kubectl",
+        "vscode-kubernetes.helm-path": "/mnt/mise-data/shims/helm",
+        "chat.agent.sandbox.enabled": "off"
+      },
+      "extensions": [
+        "astral-sh.ty",
+        "charliermarsh.ruff",
+        "csharpier.csharpier-vscode",
+        "emeraldwalk.runonsave",
+        "esbenp.prettier-vscode",
+        "hashicorp.terraform",
+        "mkhl.shfmt",
+        "ms-azure-devops.azure-pipelines",
+        "ms-azuretools.vscode-containers",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.vscode-python-envs",
+        "ms-vscode.makefile-tools",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}
