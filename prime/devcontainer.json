@@ -129,7 +129,8 @@
             "source.organizeImports": "explicit"
           }
         },
-        "python.languageServer": "Default",
+        // python.languageServer set to "None" so that Astral ty handles type checking
+        "python.languageServer": "None",
         "python.analysis.typeCheckingMode": "standard",
         "python-envs.alwaysUseUv": true,
         "ty.experimental.useUv": "on",
