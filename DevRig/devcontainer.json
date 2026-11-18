@@ -28,11 +28,6 @@
   "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {
-      "settings": {
-        "vscode-kubernetes.kubectl-path": "/mnt/mise-data/shims/kubectl",
-        "vscode-kubernetes.helm-path": "/mnt/mise-data/shims/helm",
-        "chat.agent.sandbox.enabled": "off"
-      },
       "extensions": [
         "astral-sh.ty",
         "charliermarsh.ruff",
@@ -53,7 +48,158 @@
         "ms-python.vscode-python-envs",
         "ms-vscode.makefile-tools",
         "redhat.vscode-yaml"
-      ]
+      ],
+      "settings": {
+        // Editor
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.semanticHighlighting.enabled": true,
+
+        // Files
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+
+        // Prettier
+        "prettier.tabWidth": 2,
+        "prettier.printWidth": 125,
+
+        // Kubernetes
+        "vs-kubernetes": {
+          "vs-kubernetes.crd-code-completion": "disabled"
+        },
+        "vscode-kubernetes.kubectl-path": "/mnt/mise-data/shims/kubectl",
+        "vscode-kubernetes.helm-path": "/mnt/mise-data/shims/helm",
+
+        // C# (.NET)
+        "[csharp]": {
+          "editor.defaultFormatter": "csharpier.csharpier-vscode"
+        },
+
+        // Docker
+        "[dockerfile]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+        },
+        "[dockercompose]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+        },
+
+        // Helm
+        "[helm]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        },
+
+        // GitHub Actions
+        "[github-actions-workflow]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml"
+        },
+
+        // Makefile
+        "[makefile]": {
+          "editor.tabSize": 8,
+          "editor.insertSpaces": false
+        },
+        "makefile.configureOnOpen": false,
+        "makefile.configureOnEdit": false,
+        "makefile.configureAfterCommand": false,
+
+        // Markdown
+        "[markdown]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+
+        // Packer
+        "emeraldwalk.runonsave": {
+          "commands": [
+            {
+              "match": "\\.(pkr.hcl|pkrvars.hcl)$",
+              "cmd": "packer fmt ${file}"
+            }
+          ]
+        },
+
+        // Python
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.tabSize": 4,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        },
+        "python.languageServer": "Default",
+        "python.analysis.typeCheckingMode": "standard",
+        "python-envs.alwaysUseUv": true,
+        "ty.experimental.useUv": "on",
+
+        // JSON
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+
+        // Javascript
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+
+        // Shellscript
+        "[shellscript]": {
+          "editor.defaultFormatter": "mkhl.shfmt"
+        },
+        "shfmt.executableArgs": ["-i", "4"],
+
+        // Terraform
+        "terraform.validation.enableEnhancedValidation": false,
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.codeActionsOnSave": {
+            "source.formatAll.terraform": "always"
+          }
+        },
+        "[terraform-vars]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.codeActionsOnSave": {
+            "source.formatAll.terraform": "always"
+          }
+        },
+
+        // Ansible
+        "yaml.schemas": {
+          "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/vars.json": ["*/defaults/**"],
+          "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/meta.json": ["*/meta/**"],
+          "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks": [
+            "*/handlers/**",
+            "*/tasks/**"
+          ]
+        },
+
+        // Azure pipelines
+        "[azure-pipelines]": {
+          "editor.defaultFormatter": "ms-azure-devops.azure-pipelines"
+        },
+        "files.associations": {
+          "**/pipelines/*.yml": "azure-pipelines"
+        },
+
+        // YAML
+        "[yaml]": {
+          "editor.defaultFormatter": "redhat.vscode-yaml",
+          "editor.autoIndent": "keep",
+          "diffEditor.ignoreTrimWhitespace": false,
+          "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+          },
+          "editor.suggest.insertMode": "replace"
+        },
+        "yaml.disableSchemaDetection": ["**/pipelines/*.yml", "azure-pipelines.yml", "azure-pipelines.yaml"]
+      }
     }
   }
 }
