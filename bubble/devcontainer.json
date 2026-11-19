@@ -1,7 +1,7 @@
 {
-  "name": "Prime",
+  "name": "Bubble",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu26.04",
-  "runArgs": ["--hostname", "prime"],
+  "runArgs": ["--hostname", "bubble"],
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
@@ -12,11 +12,11 @@
     "ghcr.io/devcontainers-extra/features/mise:1": {}
   },
   "containerEnv": {
-    "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/prime/mise.toml",
+    "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/bubble/mise.toml",
     "MISE_DATA_DIR": "/mnt/mise-data"
   },
   "remoteEnv": {
-    "PATH": "/mnt/mise-data/shims:/home/vscode/.dotnet/tools:${containerEnv:PATH}"
+    "PATH": "/mnt/mise-data/shims:${containerEnv:PATH}"
   },
   "initializeCommand": "mkdir -p $HOME/.agents/skills",
   "mounts": [
@@ -26,7 +26,7 @@
     "source=zsh-history,target=/commandhistory,type=volume",
     "source=${localEnv:HOME}/.agents/skills,target=/home/vscode/.agents/skills,type=bind,consistency=cached"
   ],
-  "postCreateCommand": [".devcontainer/prime/post-create.sh"],
+  "postCreateCommand": [".devcontainer/bubble/post-create.sh"],
   "waitFor": "postCreateCommand",
   "customizations": {
     "vscode": {

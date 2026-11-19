@@ -1,5 +1,6 @@
 [tools]
 dotnet = "10.0.404"
+"dotnet:csharpier" = "1.4.0"
 helm = "4.3.2"
 kubectl = "1.37.2"
 packer = "1.16.2"
@@ -8,3 +9,7 @@ shfmt = "3.14.1"
 sops = "3.13.3"
 terraform = "1.17.2"
 uv = "0.13.8"
+
+[env]
+DOTNET_ROOT = "/mnt/mise-data/dotnet-root"
+_.path = ["{{ env.HOME }}/.dotnet/tools"]
