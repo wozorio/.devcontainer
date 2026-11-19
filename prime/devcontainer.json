@@ -18,11 +18,13 @@
   "remoteEnv": {
     "PATH": "/mnt/mise-data/shims:/home/vscode/.dotnet/tools:${containerEnv:PATH}"
   },
+  "initializeCommand": "mkdir -p $HOME/.agents/skills",
   "mounts": [
     "source=mise-data-${devcontainerId},target=/mnt/mise-data,type=volume",
     "source=dotnet-tools-${devcontainerId},target=/home/vscode/.dotnet/tools,type=volume",
     "source=nuget-cache,target=/home/vscode/.nuget,type=volume",
-    "source=zsh-history,target=/commandhistory,type=volume"
+    "source=zsh-history,target=/commandhistory,type=volume",
+    "source=${localEnv:HOME}/.agents/skills,target=/home/vscode/.agents/skills,type=bind,consistency=cached"
   ],
   "postCreateCommand": [".devcontainer/prime/post-create.sh"],
   "waitFor": "postCreateCommand",
