@@ -18,7 +18,7 @@
   "remoteEnv": {
     "PATH": "/mnt/mise-data/shims:${containerEnv:PATH}"
   },
-  "initializeCommand": "mkdir -p $HOME/.agents/skills",
+  "initializeCommand": "mkdir -p $HOME/.agents/skills && exit 0",
   "mounts": [
     "source=mise-data-${devcontainerId},target=/mnt/mise-data,type=volume",
     "source=dotnet-tools-${devcontainerId},target=/home/vscode/.dotnet/tools,type=volume",
