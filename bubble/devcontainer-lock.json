@@ -9,6 +9,11 @@
       "version": "2.7.1",
       "resolved": "ghcr.io/devcontainers/features/common-utils@sha256:e76a6a8a35d1ad824daad1540725e0ec9f8ed2dc00d2850e990a9830013c7d08",
       "integrity": "sha256:e76a6a8a35d1ad824daad1540725e0ec9f8ed2dc00d2850e990a9830013c7d08"
+    },
+    "ghcr.io/microsoft/codespace-features/artifacts-helper": {
+      "version": "3.1.2",
+      "resolved": "ghcr.io/microsoft/codespace-features/artifacts-helper@sha256:19727da83a5dd2ab932830c9f714ae97f3c963d1502797511e9d7affccf9e36b",
+      "integrity": "sha256:19727da83a5dd2ab932830c9f714ae97f3c963d1502797511e9d7affccf9e36b"
     }
   }
 }

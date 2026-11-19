@@ -9,7 +9,8 @@
       "installOhMyZsh": true,
       "ohMyZshTheme": "robbyrussell"
     },
-    "ghcr.io/devcontainers-extra/features/mise:1": {}
+    "ghcr.io/devcontainers-extra/features/mise:1": {},
+    "ghcr.io/microsoft/codespace-features/artifacts-helper": {}
   },
   "containerEnv": {
     "MISE_GLOBAL_CONFIG_FILE": "${containerWorkspaceFolder}/.devcontainer/bubble/mise.toml",
