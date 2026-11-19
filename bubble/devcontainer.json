@@ -79,7 +79,8 @@
 
         // C# (.NET)
         "[csharp]": {
-          "editor.defaultFormatter": "csharpier.csharpier-vscode"
+          "editor.defaultFormatter": "csharpier.csharpier-vscode",
+          "editor.tabSize": 4
         },
 
         // Docker
