@@ -71,6 +71,8 @@
         "prettier.tabWidth": 2,
         "prettier.printWidth": 125,
 
+        "redhat.telemetry.enabled": false,
+
         // Kubernetes
         "vs-kubernetes": {
           "vs-kubernetes.crd-code-completion": "disabled"
