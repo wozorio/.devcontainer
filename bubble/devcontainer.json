@@ -37,6 +37,7 @@
         "csharpier.csharpier-vscode",
         "emeraldwalk.runonsave",
         "esbenp.prettier-vscode",
+        "hashicorp.hcl",
         "hashicorp.terraform",
         "mkhl.shfmt",
         "ms-azure-devops.azure-pipelines",
